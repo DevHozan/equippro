@@ -18,6 +18,8 @@
             <props>
                 <prop key="index.htm">indexController</prop>
                 <prop key="login.htm">LoginController</prop>
+                <prop key="a_dashboard.htm">AdminLoginController</prop>
+                
 
             </props>
         </property>
@@ -38,5 +40,9 @@
         <bean name="LoginController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="login" />
+        
+          <bean name="AdminLoginController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="admin/dashboard" />
 
 </beans>
