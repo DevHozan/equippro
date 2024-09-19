@@ -48,6 +48,11 @@
         .navbar .navbar-brand {
             margin-left: 15px;
         }
+          .add_u{
+               display: none;
+               margin-left: 30%;
+               
+            }
         @media (max-width: 768px) {
             .sidebar {
                 width: 100px;
@@ -61,6 +66,8 @@
             .navbar {
                 margin-left: 100px;
             }
+          
+            
         }
     </style>
 </head>
@@ -72,10 +79,10 @@
         <a href="#" class="navbar-brand"><i class="fas fa-cogs"></i> Admin</a>
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a href="#" class="nav-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="a_dashboard.htm" class="nav-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link"><i class="fas fa-users"></i> Users</a>
+                <a href="UsersModel" class="nav-link"><i class="fas fa-users"></i> Users</a>
             </li>
             <li class="nav-item">
                 <a href="#" class="nav-link"><i class="fas fa-tools"></i> Assets</a>
