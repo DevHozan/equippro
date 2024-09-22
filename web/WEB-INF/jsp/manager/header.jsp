@@ -90,9 +90,9 @@
             <li class="nav-item">
                 <a href="Dashboard" class="nav-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
             </li>
-            <li class="nav-item">
+<!--            <li class="nav-item">
                 <a href="UsersModel" class="nav-link"><i class="fas fa-users"></i> Users</a>
-            </li>
+            </li>-->
             <li class="nav-item">
                 <a href="AssetsModel" class="nav-link"><i class="fas fa-tools"></i> Assets</a>
             </li>
