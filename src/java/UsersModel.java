@@ -71,11 +71,11 @@ public class UsersModel extends HttpServlet {
             // If users found, forward to users page, otherwise show no users page
             if (usersList != null && !usersList.isEmpty()) {
                 request.setAttribute("users", usersList);
-                RequestDispatcher dispatcher = request.getRequestDispatcher("a_users.htm");
+                RequestDispatcher dispatcher = request.getRequestDispatcher((String)session.getAttribute("level")+"_users.htm");
                 dispatcher.forward(request, response);
             } else {
                 out.println("<p>No users found in the system.</p>");
-                RequestDispatcher dispatcher = request.getRequestDispatcher("no_users.jsp");
+                RequestDispatcher dispatcher = request.getRequestDispatcher((String)session.getAttribute("level")+"_users.htm");
                 dispatcher.forward(request, response);
             }
         } catch (Exception e) {

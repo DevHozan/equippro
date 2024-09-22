@@ -20,6 +20,30 @@
         <servlet-name>UsersModel</servlet-name>
         <servlet-class>UsersModel</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AssetsModel</servlet-name>
+        <servlet-class>AssetsModel</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ReportsModel</servlet-name>
+        <servlet-class>ReportsModel</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MaintenanceModel</servlet-name>
+        <servlet-class>MaintenanceModel</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Dashboard</servlet-name>
+        <servlet-class>Dashboard</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Logout</servlet-name>
+        <servlet-class>Logout</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ReplacementModel</servlet-name>
+        <servlet-class>ReplacementModel</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.htm</url-pattern>
@@ -31,6 +55,30 @@
     <servlet-mapping>
         <servlet-name>UsersModel</servlet-name>
         <url-pattern>/UsersModel</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AssetsModel</servlet-name>
+        <url-pattern>/AssetsModel</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReportsModel</servlet-name>
+        <url-pattern>/ReportsModel</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MaintenanceModel</servlet-name>
+        <url-pattern>/MaintenanceModel</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Dashboard</servlet-name>
+        <url-pattern>/Dashboard</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Logout</servlet-name>
+        <url-pattern>/Logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReplacementModel</servlet-name>
+        <url-pattern>/ReplacementModel</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

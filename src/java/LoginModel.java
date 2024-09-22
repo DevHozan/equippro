@@ -1,5 +1,7 @@
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
+import java.util.Map;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -40,14 +42,25 @@ public class LoginModel extends HttpServlet {
             
         
 
-        // Example query to check if the user exists
-        String sql = "SELECT COUNT(*) FROM users WHERE email = ? AND password = ?";
-        int count = jdbcTemplate.queryForObject(sql, new Object[]{email, password}, Integer.class);
+                    // Example query to check if the user exists
+                 String sql = "SELECT * FROM users WHERE email = ? AND password = ?";
+            List<Map<String, Object>> users = jdbcTemplate.queryForList(sql, new Object[]{email, password});
 
-      
-            if (count > 0) {
-                response.sendRedirect("a_dashboard.htm");
-            } else {
+            // Check if a user was found
+            if (!users.isEmpty()) {
+                Map<String, Object> user = users.get(0); // Get the first user
+                String level = (String) user.get("level"); // Assuming "level" is a column in your users table
+
+                 session.setAttribute("level", level);
+                    session.setAttribute("id", user.get("id"));
+                if ("admin".equals(level)) {
+                   
+                    response.sendRedirect("Dashboard");
+                } else {
+                    response.sendRedirect(level + "_dashboard.htm");
+// Redirect for non-admin users
+                }
+            } else{
                // Obtain the session from the request object
                     
 
@@ -55,6 +68,7 @@ public class LoginModel extends HttpServlet {
                     String message = "Invalid credentials";
                     session.setAttribute("message", message);
 
+          
              response.sendRedirect("login.htm");
                 
             }

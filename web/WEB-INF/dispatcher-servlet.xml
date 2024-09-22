@@ -1,55 +1,219 @@
-<?xml version='1.0' encoding='UTF-8' ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:p="http://www.springframework.org/schema/p"
-       xmlns:aop="http://www.springframework.org/schema/aop"
-       xmlns:tx="http://www.springframework.org/schema/tx"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
-       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
-       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
 
-    <!--
-    Most controllers will use the ControllerClassNameHandlerMapping above, but
-    for the index controller we are using ParameterizableViewController, so we must
-    define an explicit mapping for it.
-    -->
     <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
         <property name="mappings">
             <props>
                 <prop key="index.htm">indexController</prop>
+                <prop key="error_page.htm">ErrorController</prop>
                 <prop key="login.htm">LoginController</prop>
-                <prop key="a_dashboard.htm">AdminLoginController</prop>
-                <prop key="a_users.htm">AdminUsersController</prop>
+                <prop key="admin_dashboard.htm">AdminLoginController</prop>
+                <prop key="admin_users.htm">AdminUsersController</prop>
+                <prop key="admin_assets.htm">AdminAssetsController</prop>
+                <prop key="admin_reports.htm">AdminReportsController</prop>
+                <prop key="admin_maintenance_management.htm">AdminMaintenanceController</prop>
+                <prop key="admin_replacement_management.htm">AdminReplacementController</prop>
                 
-               
+                <prop key="manager_dashboard.htm">ManagerLoginController</prop>
+                <prop key="manager_users.htm">ManagerUsersController</prop>
+                <prop key="manager_assets.htm">ManagerAssetsController</prop>
+                <prop key="manager_reports.htm">ManagerReportsController</prop>
+                <prop key="manager_maintenance_management.htm">ManagerMaintenanceController</prop>
+                <prop key="manager_replacement_management.htm">ManagerReplacementController</prop>
                 
+                <prop key="analyst_dashboard.htm">AnalystLoginController</prop>
+                <prop key="analyst_users.htm">AnalystUsersController</prop>
+                <prop key="analyst_assets.htm">AnalystAssetsController</prop>
+                <prop key="analyst_reports.htm">AnalystReportsController</prop>
+                <prop key="analyst_maintenance_management.htm">AnalystMaintenanceController</prop>
+                <prop key="analyst_replacement_management.htm">AnalystReplacementController</prop>
 
+                <prop key="accountant_dashboard.htm">AccountantLoginController</prop>
+                <prop key="accountant_users.htm">AccountantUsersController</prop>
+                <prop key="accountant_assets.htm">AccountantAssetsController</prop>
+                <prop key="accountant_reports.htm">AccountantReportsController</prop>
+                <prop key="accountant_maintenance_management.htm">AccountantMaintenanceController</prop>
+                <prop key="accountant_replacement_management.htm">AccountantReplacementController</prop>
+
+                <prop key="purchaser_dashboard.htm">PurchaserLoginController</prop>
+                <prop key="purchaser_users.htm">PurchaserUsersController</prop>
+                <prop key="purchaser_assets.htm">PurchaserAssetsController</prop>
+                <prop key="purchaser_reports.htm">PurchaserReportsController</prop>
+                <prop key="purchaser_maintenance_management.htm">PurchaserMaintenanceController</prop>
+                <prop key="purchaser_replacement_management.htm">PurchaserReplacementController</prop>
+
+                <prop key="technician_dashboard.htm">TechnicianLoginController</prop>
+                <prop key="technician_users.htm">TechnicianUsersController</prop>
+                <prop key="technician_assets.htm">TechnicianAssetsController</prop>
+                <prop key="technician_reports.htm">TechnicianReportsController</prop>
+                <prop key="technician_maintenance_management.htm">TechnicianMaintenanceController</prop>
+                <prop key="technician_replacement_management.htm">TechnicianReplacementController</prop>
+
+                <prop key="vendor_dashboard.htm">VendorLoginController</prop>
+                <prop key="vendor_users.htm">VendorUsersController</prop>
+                <prop key="vendor_assets.htm">VendorAssetsController</prop>
+                <prop key="vendor_reports.htm">VendorReportsController</prop>
+                <prop key="vendor_maintenance_management.htm">VendorMaintenanceController</prop>
+                <prop key="vendor_replacement_management.htm">VendorReplacementController</prop>
             </props>
         </property>
     </bean>
 
-    <bean id="viewResolver"
-          class="org.springframework.web.servlet.view.InternalResourceViewResolver"
-          p:prefix="/WEB-INF/jsp/"
-          p:suffix=".jsp" />
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:prefix="/WEB-INF/jsp/" p:suffix=".jsp" />
 
-    <!--
-    The index controller.
-    -->
     <bean name="indexController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="index" />
     
-        <bean name="LoginController"
+    <bean name="ErrorController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="error_page" />
+    
+    <bean name="LoginController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="login" />
-        
-          <bean name="AdminLoginController"
+    
+    <!-- Admin Controllers -->
+    <bean name="AdminLoginController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="admin/dashboard" />
-          
-             <bean name="AdminUsersController"
+    <bean name="AdminUsersController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="admin/users" />
+    <bean name="AdminAssetsController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="admin/assets" />
+    <bean name="AdminReportsController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="admin/reports" />
+    <bean name="AdminMaintenanceController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="admin/maintenance" />
+    <bean name="AdminReplacementController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="admin/replacement" />
 
+    <!-- Manager Controllers -->
+    <bean name="ManagerLoginController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="manager/dashboard" />
+    <bean name="ManagerUsersController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="manager/users" />
+    <bean name="ManagerAssetsController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="manager/assets" />
+    <bean name="ManagerReportsController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="manager/reports" />
+    <bean name="ManagerMaintenanceController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="manager/maintenance" />
+    <bean name="ManagerReplacementController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="manager/replacement" />
+
+    <!-- Analyst Controllers -->
+    <bean name="AnalystLoginController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="analyst/dashboard" />
+    <bean name="AnalystUsersController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="analyst/users" />
+    <bean name="AnalystAssetsController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="analyst/assets" />
+    <bean name="AnalystReportsController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="analyst/reports" />
+    <bean name="AnalystMaintenanceController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="analyst/maintenance" />
+    <bean name="AnalystReplacementController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="analyst/replacement" />
+
+    <!-- Accountant Controllers -->
+    <bean name="AccountantLoginController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="accountant/dashboard" />
+    <bean name="AccountantUsersController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="accountant/users" />
+    <bean name="AccountantAssetsController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="accountant/assets" />
+    <bean name="AccountantReportsController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="accountant/reports" />
+    <bean name="AccountantMaintenanceController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="accountant/maintenance" />
+    <bean name="AccountantReplacementController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="accountant/replacement" />
+
+    <!-- Purchaser Controllers -->
+    <bean name="PurchaserLoginController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="purchaser/dashboard" />
+    <bean name="PurchaserUsersController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="purchaser/users" />
+    <bean name="PurchaserAssetsController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="purchaser/assets" />
+    <bean name="PurchaserReportsController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="purchaser/reports" />
+    <bean name="PurchaserMaintenanceController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="purchaser/maintenance" />
+    <bean name="PurchaserReplacementController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="purchaser/replacement" />
+
+    <!-- Technician Controllers -->
+    <bean name="TechnicianLoginController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="technician/dashboard" />
+    <bean name="TechnicianUsersController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="technician/users" />
+    <bean name="TechnicianAssetsController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="technician/assets" />
+    <bean name="TechnicianReportsController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="technician/reports" />
+    <bean name="TechnicianMaintenanceController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="technician/maintenance" />
+    <bean name="TechnicianReplacementController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="technician/replacement" />
+
+    <!-- Vendor Controllers -->
+    <bean name="VendorLoginController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="vendor/dashboard" />
+    <bean name="VendorUsersController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="vendor/users" />
+    <bean name="VendorAssetsController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="vendor/assets" />
+    <bean name="VendorReportsController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="vendor/reports" />
+    <bean name="VendorMaintenanceController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="vendor/maintenance" />
+    <bean name="VendorReplacementController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="vendor/replacement" />
 </beans>

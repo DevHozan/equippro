@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard - EQUIPPRO</title>
+    <title>Accountant Dashboard - EQUIPPRO</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- FontAwesome for Icons -->
@@ -85,14 +85,14 @@
 
     <!-- Sidebar -->
     <div class="sidebar">
-        <a href="#" class="navbar-brand"><i class="fas fa-cogs"></i> Admin</a>
+        <a href="#" class="navbar-brand"><i class="fas fa-cogs"></i> Accountant</a>
         <ul class="nav flex-column">
             <li class="nav-item">
                 <a href="Dashboard" class="nav-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
             </li>
-            <li class="nav-item">
+<!--            <li class="nav-item">
                 <a href="UsersModel" class="nav-link"><i class="fas fa-users"></i> Users</a>
-            </li>
+            </li>-->
             <li class="nav-item">
                 <a href="AssetsModel" class="nav-link"><i class="fas fa-tools"></i> Assets</a>
             </li>
@@ -114,7 +114,7 @@
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">EQUIPPRO Admin</a>
+        <a class="navbar-brand" href="#">EQUIPPRO Accountant</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
