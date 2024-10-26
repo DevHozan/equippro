@@ -56,8 +56,8 @@
                             <input type="hidden" name="replacement_id" value="${replacement.replacement_id}">
                             <input type="hidden" name="asset_id" value="${replacement.asset_id}">
 
-<!--                            <input type="submit" class="btn btn-primary" name="action" value="Done">
-                            <input type="submit" class="btn btn-danger" name="action" value="Delete">-->
+                            <input type="submit" class="btn btn-primary" name="action" value="Done">
+                            <input type="submit" class="btn btn-danger" name="action" value="Delete">
                         </form>
                     </td>
                 </tr>

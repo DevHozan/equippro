@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analyst Dashboard - EQUIPPRO</title>
+    <title>Admin Dashboard - EQUIPPRO</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- FontAwesome for Icons -->
@@ -85,7 +85,7 @@
 
     <!-- Sidebar -->
     <div class="sidebar">
-        <a href="#" class="navbar-brand"><i class="fas fa-cogs"></i> Analyst</a>
+        <a href="#" class="navbar-brand"><i class="fas fa-cogs"></i> Admin</a>
         <ul class="nav flex-column">
             <li class="nav-item">
                 <a href="Dashboard" class="nav-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
@@ -114,7 +114,7 @@
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">EQUIPPRO Analyst</a>
+        <a class="navbar-brand" href="#">EQUIPPRO Admin</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
